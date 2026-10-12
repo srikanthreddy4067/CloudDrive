@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CloudDrive - Secure Cloud Storage</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>☁️ CloudDrive</h1>
+    <p>Secure Cloud File Storage</p>
+
+    <!-- Authentication -->
+    <div id="authSection">
+
+        <h2>Create Account</h2>
+
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+
+        <div class="auth-buttons">
+            <button onclick="signUp()">Sign Up</button>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <p id="authMessage"></p>
+
+    </div>
+
+    <!-- CloudDrive -->
+    <div id="driveSection" style="display:none;">
+
+        <div class="user-bar">
+            <span id="userEmail"></span>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <div class="upload-box">
+            <input type="file" id="fileInput">
+            <button onclick="uploadFile()">Upload File</button>
+        </div>
+
+        <p id="uploadStatus"></p>
+
+        <h2>My Files</h2>
+
+        <button onclick="loadFiles()">Refresh Files</button>
+
+        <div id="fileList">
+            <p>No files uploaded yet.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@6.3.12/dist/amazon-cognito-identity.min.js"></script>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1692.0.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
